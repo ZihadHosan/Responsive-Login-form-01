@@ -1,0 +1,169 @@
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+$primary-font: 'PT Sans', sans-serif;
+
+//Breakpoints 
+@mixin phone-767 {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+@mixin phone-360 {
+    @media screen and (max-width: 360px) {
+        @content;
+    }
+}
+
+/* Color */
+$primary-color: #12a9c4;
+$gradient-color: linear-gradient(90deg, rgba(16,201,157,1) 0%, rgba(18,169,196,1) 100%);
+
+/****************** RESET STYLE ***************
+---------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $primary-font;
+    font-weight: 300;
+    background-color: #f1f1f1;
+}
+input, select, textarea{
+    font-family: $primary-font;
+}
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+/********************* Custom Style ********************
+------------------------------------------------------*/
+#login_wrapper{
+    width: 100%;
+    height: 100vh;
+    background: $gradient-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon{
+        max-width: 20px;
+    }
+
+    form{
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 25px;
+        max-width: 450px;
+        width: calc(100% - 28px);
+
+        .title{
+            font-size: 32px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        .input-col{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            input{
+                outline: none;
+                appearance: none;
+                border: 0;
+                border-bottom: 1px solid #ccc;
+                width: 100%;
+                padding: 10px;
+                font-size: 17px;
+                padding-left: 30px;
+                margin-bottom: 10px;
+            }
+
+            .icon{
+                position: absolute;
+                left: 0;
+                top: 40%;
+                transform: translateY(-50%);
+            }
+
+            .remember{
+                padding: 20px 0;
+
+                input[type="checkbox"]{
+                    appearance: auto;
+                    width: fit-content;
+                    margin-right: 5px;
+                }
+            }
+
+            a{
+                color: $primary-color;
+                display: inline-block;
+                padding: 20px 0;
+            }
+
+            &.sutmit-btb-group{
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin: 25px auto;
+                input{
+                    text-transform: uppercase;
+                    max-width: 130px;
+                    padding: 10px 25px;
+                    border: 0;
+                    border-radius: 5px;
+                    color: #fff;
+                    background-color: $primary-color;
+                    font-weight: 700;
+                    box-shadow: 0 1px 4px #ccc;
+                }
+            }
+        }
+
+        .alt-sign-in{
+            background: $gradient-color;
+            padding: 25px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span{
+                color: #fff;
+                display: inline-block;
+                padding-right: 15px;
+                margin-right: 10px;
+                border-right: 1px solid #ffffff;
+                font-weight: 700;
+            }
+
+            a{
+                display: inline-block;
+
+                &:not(:last-child){
+                    margin-right: 10px;
+                }
+
+                img{
+                    filter: invert(1);
+                    max-width: 25px;
+                }
+            }
+        }
+    }
+}
